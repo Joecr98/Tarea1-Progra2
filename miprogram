@@ -1,0 +1,87 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.mycompany.tarea1;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+
+/**
+ *
+ * @author Joe
+ */
+public class main {
+
+    /**
+     * @param args the command line arguments
+     * @throws java.io.IOException
+     */
+    public static void main(String[] args) throws IOException{
+        
+        BufferedReader linea = new BufferedReader(new InputStreamReader(System.in));
+        
+        String n, nombre;
+        int op;
+        double dinero, result;
+        boolean salir = false;
+       
+        System.out.println("\nIngrese su nombre: ");
+        nombre = linea.readLine();
+        System.out.println("\nIngrese una cantidad: ");
+        n = linea.readLine();
+        dinero = Double.parseDouble(n);
+        
+        
+        
+       while(!salir){
+           
+           System.out.println("¿A que moneda desea convertir?\n");
+           
+           System.out.println("1. Dólar");
+           System.out.println("2. Euros");
+           System.out.println("3. Yuanes");
+           System.out.println("4. Salir");
+            
+           System.out.println("Escribe una de las opciones\n");
+           n = linea.readLine();
+           op = Integer.parseInt(n);
+            
+           switch(op){
+               case 1:
+                   System.out.println("\n\n*** 1. Convertir a dólares ***\n");
+                 
+                   result = (double) (dinero/7.75);
+                   System.out.println(nombre + "\n" + dinero + " quetzales " + " en dolares son: " + result + " dólares.\n\n\n\n");
+                   break;
+                   
+               case 2:
+                   System.out.println("*** 1. Convertir a euros ***\n");
+                   
+                   result = (double) (dinero/9.15);
+                   System.out.println(nombre + "\n" +dinero + " quetzales " + " en euros son: " + result + " euros.\n\n\n\n");
+                   break;
+                   
+                case 3:
+                   System.out.println("*** 1. Convertir a yuanes ***\n");
+                   
+                   result = (double) (dinero/1.20);
+                   System.out.println(nombre + "\n" +dinero + " quetzales " + " en yuanes son: " + result + " yuanes.\n\n\n\n");
+                   break;
+                   
+                case 4:
+                   salir=true;
+                   break;
+                   
+                default:
+                   System.out.println("Solo números entre 1 y 4");
+           }    }
+        
+        
+        
+        
+    }
+    
+}
